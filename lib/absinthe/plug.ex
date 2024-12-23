@@ -229,11 +229,6 @@ defmodule Absinthe.Plug do
 
     raw_options = Keyword.take(opts, @raw_options)
 
-    raw_options =
-      Keyword.update(raw_options, :token_limit, :infinity, fn _ ->
-        Keyword.get(opts, :token_limit, :infinity)
-      end)
-
     log_level = Keyword.get(opts, :log_level, :debug)
 
     pubsub = Keyword.get(opts, :pubsub, nil)
